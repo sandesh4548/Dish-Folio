@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dish-Folio</title>
+    <link rel="icon" type="image/x-icon" href="img/2.png">
+    <link rel="stylesheet" href="navbar.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@600&display=swap');
+        /*
+        #FF7F3F
+        #F6D860
+        */
+      /* hero section start*/
+
+      .hero {
+        background-image: url("img/spaghetti-1932466.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 91vh;
+        display: flex;
+        justify-content: left;
+        /* align-items: center; */
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background-color: #05006859; set the opacity of the black overlay */
+        background: linear-gradient(
+          145deg,
+          #f6d86058 1%,
+          #483b0a58 100%
+        );
+      }
+
+      .hero-content {
+        /* text-align: center;   */
+        color: #ffffff;
+        max-width: 1000px;
+        padding: 0 30px;
+        margin-top: 100px;
+        z-index: 1;
+
+      }
+
+      .hero-content h1 {
+        font-size: 4rem;
+        margin-bottom: 10px;
+        font-family: "Lobster", cursive;
+      }
+
+      .hero-content p {
+        font-size: 1.9rem;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        font-family: "Edu NSW ACT Foundation", cursive;
+      }
+
+      .btn {
+        display: inline-block;
+        background: white;
+        color: #000000;
+        padding: 15px 35px;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.4s ease;
+        font-size: 1.3rem;
+        box-shadow: 3px 3px 10px white;
+      }
+
+      .btn:hover {
+        color: #fff;
+        background: #F6D860;
+        padding: 17px 50px;
+        box-shadow: 5px 5px 10px #F6D860;
+      }
+      .ano {
+        display: flex;
+      }
+    </style>
+
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-header">
+        <div class="ano">
+            <img src="img/2.png" height="30px">
+          <p style="font-size: 1.6rem">Dish-Folio</p>
+        </div>
+        <div class="ano2">
+          <button type="button" class="navbar-toggle" id="navbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+      <div class="navbar-menu" id="navbar-menu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="signup.html">Sign up</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>ultimate recipe generator website</h1>
+        <p>
+          Our recipe generator website offers unique and delicious dishes that will satisfy your cravings.
+          <span style="font-style: italic; font-size: 1.1rem; color: #3e1643"
+            ><b
+              ><a href="signup.html"
+                >Sign up to begin your wonderful journey</a
+              ></b
+            ></span
+          >
+        </p>
+        <a href="signup.html" class="btn">Sign up</a>
+      </div>
+    </section>
+
+    <script>
+      const navbarToggle = document.getElementById("navbar-toggle");
+      const navbarMenu = document.getElementById("navbar-menu");
+
+      navbarToggle.addEventListener("click", () => {
+        navbarMenu.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

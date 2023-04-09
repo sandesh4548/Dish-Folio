@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dish-Folio</title>
+    <link rel="icon" type="image/x-icon" href="img/2.png">
+    <link rel="stylesheet" href="navbar.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+      p {
+        font-family: "Jost", sans-serif;
+      }
+      span {
+        font-family: "Jost", sans-serif;
+        font-weight: 700;
+      }
+
+   
+      .con {
+        background-color: #ffac71;
+        margin-top: -20px;
+        padding: 20px;
+      }
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30vh;
+      }
+      input[type='button']{
+        font-family: "Jost", sans-serif;
+        padding: 15px 45px;
+        font-size: 2rem;
+        border: none;
+        background-color: #ffac71;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 5px 5px 30px #ffac71;
+        transition: all 0.4s;
+      }
+      input:hover {
+        color: rgb(43, 43, 43);
+        box-shadow: 5px 5px 40px #d08652;
+        padding: 17px 47px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-header">
+        <div class="ano">
+            <img src="img/2.png" height="30px">
+
+          <a
+            href="home.html"
+            style="color: #ffffff; font-size: 1.6rem; text-decoration: none"
+            >Dish-Folio</a
+          >
+        </div>
+        <div class="ano2">
+          <button type="button" class="navbar-toggle" id="navbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+      <div class="navbar-menu" id="navbar-menu">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a id="logout" onclick="logOut()" href="signup.html">log out</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="con">
+      <h1 style="font-size: 4rem">Welcome!</h1>
+      <p style="font-size: 2.2em">
+        Hello, <span id="name"></span>! Find best dishes
+      </p>
+    </div>
+    
+    <div class="btn">
+    <a href="dish.html"><input type="button" value="Get Recipe 🍴"></a>
+</div>
+
+    <script>
+      // Retrieve the name value from local storage
+      const name = localStorage.getItem("name");
+
+      // Check if the name value is null or undefined
+      if (name) {
+        // If the name value is not null or undefined, display the personalized greeting
+        const nameElement = document.getElementById("name");
+        nameElement.textContent = name;
+      } else {
+        // If the name value is null or undefined, display an error message
+        const errorElement = document.createElement("p");
+        errorElement.textContent =
+          "Error: name value not found in local storage.";
+        document.body.appendChild(errorElement);
+      }
+
+      // Function to log out the user by clearing the name value from local storage
+      function logOut() {
+        localStorage.removeItem("name");
+        window.location.href = "index.html"; // Redirect the user to the sign-up page
+      }
+
+   
+    </script>
+  </body>
+</html>
